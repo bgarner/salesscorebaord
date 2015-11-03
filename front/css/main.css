@@ -1,6 +1,10 @@
 #stage{
-	height: 1080px;
-	width: 1920px;
+	height: 1920px;
+	width: 1080px;
+	background: #333;
+	/*margin: 0; padding: 0;*/
+	position: absolute;
+	top: 0; left: 0;
 }
 
 .bannerdiv{
@@ -15,3 +19,18 @@
 	.sportchek{
 		background-color: #666;
 	}
+
+
+.ct-labels span {
+  color: white;
+  font-size: 20px;
+}
+
+.ct-grid {
+      stroke: rgba(255,255,255,.5) !important;
+    }
+
+.ct-series-a .ct-line,
+.ct-series-a .ct-point {
+  stroke: yellow;
+}
