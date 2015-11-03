@@ -1,0 +1,17 @@
+#stage{
+	height: 1080px;
+	width: 1920px;
+}
+
+.bannerdiv{
+	height: 100%;
+	width: 50%;
+	float: left;
+}
+	.atmo{ 
+		background-color: #333;
+	}
+
+	.sportchek{
+		background-color: #666;
+	}
