@@ -1,7 +1,7 @@
 #stage{
 	height: 1920px;
 	width: 1080px;
-	background: #333;
+	background: #242424 url('../images/darth_vader__1920_x_1080_-2015-11-04-1922.jpg') top right repeat;
 	/*margin: 0; padding: 0;*/
 	position: absolute;
 	top: 0; left: 0;
@@ -12,18 +12,15 @@
 	width: 50%;
 	float: left;
 }
-	.atmo{ 
-		background-color: #333;
-	}
-
-	.sportchek{
-		background-color: #666;
-	}
-
 
 .ct-labels span {
   color: white;
   font-size: 20px;
+}
+
+.ct-label{
+	font-size: 30px;
+	color: #fff;
 }
 
 .ct-grid {
@@ -32,5 +29,23 @@
 
 .ct-series-a .ct-line,
 .ct-series-a .ct-point {
-  stroke: yellow;
+  stroke: green;
 }
+
+.ct-chart{
+
+/*	border: thin solid #000; */
+	background: url('../images/333333-0.7.png') top left repeat;
+	-webkit-box-shadow: 0px 0px 40px 9px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 40px 9px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 40px 9px rgba(0,0,0,0.75);
+
+	width: 90%;
+	margin: 20px auto;
+
+	font-family: arial, helvetica, sans-serif;
+}
+
+#bar{ height: 200px;}
+
+#chart1{ height: 400px;}
