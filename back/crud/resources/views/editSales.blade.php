@@ -14,8 +14,9 @@
 <body>
 	
 	<div class="row">
-		<div class="col-md-9 col-md-offset-1">
-			<h2 class="title">Sales Report &mdash; {{$sales->banner}}</h2>
+		<div class="col-md-4 col-md-offset-1 title"><h2> Sales &mdash; {{$sales->banner}} </h2></div>
+		<div class="col-md-2">
+			<h2 id="week">{{$sales->week}}</h2>
 		</div>
 		<div class="col-md-offset-9">
 			<br>
@@ -31,9 +32,9 @@
 				<thead>
 					<tr>
 						<th>Day</th>
-						<th>Current Year</th>
+						<th>Actual</th>
 						<th>Last Year</th>
-						<th>Percentage</th>
+						<th>Last Year %</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -62,22 +63,29 @@
 	<script type="text/javascript" src="/js/jquery.tabledit.min.js"></script>
 
 	<script type="text/javascript">
-	$('#data-table').Tabledit({
-		editButton: false,
-        deleteButton: false,	
-        restoreButton:false,
-        saveButton:false,
-		columns: {	
-					
-					identifier: [0, 'day[]'],                   
- 					editable: [[1, 'current_year[]'], [2, 'last_year[]'], [3, 'percentage[]']]
- 				}
- 	});
+	
+	var initiateTableEdit = function(){
+
+		$('#data-table').Tabledit({
+			editButton: false,
+	        deleteButton: false,	
+	        restoreButton:false,
+	        saveButton:false,
+			columns: {	
+						
+						identifier: [0, 'day[]'],                   
+	 					editable: [[1, 'current_year[]'], [2, 'last_year[]'], [3, 'percentage[]']]
+	 				}
+	 	});
+	}
+
+	
 
  	var buildJSON = function() {
  		var json = {};
 
  		json["banner"] = "<?php echo $sales->banner; ?>"
+ 		json["week"] = $('input[name="week"]').val();
 
  		json["details"] = {};
 
@@ -107,7 +115,7 @@
  		return JSON.stringify(json);
  	}
 
- 	$("input").on("change", function(){
+ 	var saveChanges = function(){
 
  		var jsonfile = buildJSON();
  		
@@ -128,8 +136,35 @@
 		  
 		}).done(function( data ) {
 		 });
+ 	}
+
+ 	$("body").on("change", "input", function(){
+
+ 		saveChanges();
 		 		
  	})
+
+ 	$("#week").on("click", function(){
+
+		var week = "<?php echo $sales->week; ?>"
+	    $(this).html('');
+	    $('<input></input>')
+	        .attr({
+	            'type': 'text',
+	            'name': 'week',
+	            'id': 'week',
+	            'value': week
+	        })
+	        .appendTo('#week');
+	    $('#week').focus();
+	})
+
+	$("document").ready(function () {
+ 		initiateTableEdit();
+
+ 	});
+
+
 	</script>	
 </body>
 </html>
