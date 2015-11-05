@@ -1,17 +1,13 @@
 #stage{
 	height: 1920px;
 	width: 1080px;
-	background: #242424 url('../images/darth_vader__1920_x_1080_-2015-11-04-1922.jpg') top right repeat;
+	background: #242424 url('../images/darth_vader__1920_x_1080_-2015-11-04-1922.jpg') top right no-repeat;
 	/*margin: 0; padding: 0;*/
 	position: absolute;
 	top: 0; left: 0;
 }
 
-.bannerdiv{
-	height: 100%;
-	width: 50%;
-	float: left;
-}
+
 
 .ct-labels span {
   color: white;
@@ -33,7 +29,6 @@
 }
 
 .ct-chart{
-
 /*	border: thin solid #000; */
 	background: url('../images/333333-0.7.png') top left repeat;
 	-webkit-box-shadow: 0px 0px 40px 9px rgba(0,0,0,0.75);
@@ -41,11 +36,70 @@
 	box-shadow: 0px 0px 40px 9px rgba(0,0,0,0.75);
 
 	width: 90%;
-	margin: 20px auto;
-
+	margin: 0px auto; 
 	font-family: arial, helvetica, sans-serif;
 }
 
 #bar{ height: 200px;}
 
 #chart1{ height: 400px;}
+
+	#chart1 .ct-label{
+		font-size: 14px;
+		fill: #fff;
+	}
+
+	#chart1 .ct-label text.ct-label{
+		fill: red;
+	}
+
+	#pie .ct-label {
+		fill: #fff;
+		font-size: 16px;
+	}
+
+
+.ct-legend {
+    padding: 0;
+    font-family: sans-serif;
+   	font-size: 24px;
+   	position: relative;
+   	bottom: 500px;
+   	left: 100px;
+   	color: #fff;
+   	width: 300px;
+  }
+   .ct-legend li {
+        position: relative;
+        padding-left: 1.3em;
+        margin-bottom: 0.8em;
+        list-style-type: none;
+    }
+
+    .ct-legend li::before {
+        height: 1em;
+        width: 1em;
+        position: absolute;
+        top: 0.1em;
+        left: 0em;
+        content: '';
+        border-radius: 1em;
+    }
+
+  .ct-series-0::before{ background-color: #d70206; }
+  .ct-series-1::before{ background-color: #F05B4F; }
+  .ct-series-2::before{ background-color: #F4C63D; }
+  .ct-series-3::before{ background-color: #453D3F; }
+  .ct-series-4::before{ background-color: #d70206; }
+  .ct-series-5::before{ background-color: #d70206; }
+  .ct-series-6::before{ background-color: #d70206; }
+  .ct-series-7::before{ background-color: #d70206; }
+  .ct-series-8::before{ background-color: #d70206; }
+  .ct-series-9::before{ background-color: #d70206; }
+  .ct-series-10::before{ background-color: #d70206; }
+
+    /* @for $i from 0 to length($ct-series-colors) {
+          .ct-series-#{$i}::before {
+            background-color: nth($ct-series-colors, $i + 1);
+        }
+    }*/
