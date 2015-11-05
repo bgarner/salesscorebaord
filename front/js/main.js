@@ -38,8 +38,8 @@
 new Chartist.Bar('#chart1', {
   labels: ['Mon', 'Tues','Wed', 'Thurs', 'Fri', 'Sat', 'Sun'],
   series: [
-    [ 6523456, 6623456, 7523456, 5523456, 6323456, 5923456, 6234568 ],
-    [ 5523456, 4623456, 8523456, 4823456, 4223456, 6123456, 6923456 ]
+    [ 2409573, 2233389, 2279086, 0, 0, 0, 0 ],
+    [ 2652988, 2357740, 2567888, 0, 0, 0, 0 ]
   ]
 }, {
   fullWidth: true,
@@ -70,8 +70,8 @@ new Chartist.Bar('#chart1', {
 
 
 var datapie = {
-    labels: ['Footwear', 'Hardgoods', 'Softgoods', 'Hockey', 'Golf', 'Licensed' ],
-    series: [20, 15, 25, 8, 5, 2]
+    labels: ['Hardgoods', 'Softgoods', 'Footwear', 'Other' ],
+    series: [505880, 1142598, 573694, 26099 ]
 }
 
 var options = {
@@ -111,7 +111,7 @@ new Chartist.Pie('#pie', datapie, options, responsiveOptions);
 new Chartist.Bar('#bar', {
   labels: ['Mon', 'Tues','Wed', 'Thurs', 'Fri', 'Sat', 'Sun'],
   series: [
-    [1, 2, 4, 8.3, 6.2, -2.3, -1.9]
+    [-4.7, -0.4, -5.6, 0, 0, 0, 0]
   ]
 }, {
   high: 10,
@@ -147,7 +147,7 @@ var legend = $('.ct-legend');
 $.each(datapie.labels, function(i, val) {
     var listItem = $('<li />')
         .addClass('ct-series-' + i)
-        .html('<strong>' + val + '</strong>: ' + datapie.series[i] + '%')
+        .html('<strong>' + val + '</strong>: $' + datapie.series[i])
         .appendTo(legend);
 });
 

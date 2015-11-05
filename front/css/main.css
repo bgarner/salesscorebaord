@@ -1,13 +1,20 @@
+/*fonts*/
+@font-face { font-family: GalaxiePolarisCondensed-Book.; src: url('/fonts/GalaxiePolarisCondensed-Book.otf'); }
+@font-face { font-family: GalaxiePolarisCondensed-Bold; font-weight: bold; src: url('/fonts/GalaxiePolarisCondensed-Bold.otf'); }
+@font-face { font-family: GalaxiePolarisCondensed-Light; font-weight: bold; src: url('/fonts/GalaxiePolarisCondensed-Light.otf'); }
+
+
+body{
+	overflow: hidden;
+}
+
 #stage{
 	height: 1920px;
 	width: 1080px;
-	background: #242424 url('../images/darth_vader__1920_x_1080_-2015-11-04-1922.jpg') top right no-repeat;
-	/*margin: 0; padding: 0;*/
+	background: #242424 url('../images/mountains.jpg') top center repeat;
 	position: absolute;
 	top: 0; left: 0;
 }
-
-
 
 .ct-labels span {
   color: white;
@@ -30,17 +37,19 @@
 
 .ct-chart{
 /*	border: thin solid #000; */
-	background: url('../images/333333-0.7.png') top left repeat;
-	-webkit-box-shadow: 0px 0px 40px 9px rgba(0,0,0,0.75);
+	background: url('../images/000000-0.7.png') top left repeat;
+/*	-webkit-box-shadow: 0px 0px 40px 9px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 40px 9px rgba(0,0,0,0.75);
-	box-shadow: 0px 0px 40px 9px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 40px 9px rgba(0,0,0,0.75);*/
 
 	width: 90%;
-	margin: 0px auto; 
+	margin: 20px auto; 
 	font-family: arial, helvetica, sans-serif;
 }
 
 #bar{ height: 200px;}
+
+#pie{ height: 400px;}
 
 #chart1{ height: 400px;}
 
@@ -64,7 +73,7 @@
     font-family: sans-serif;
    	font-size: 24px;
    	position: relative;
-   	bottom: 500px;
+   	bottom: 370px;
    	left: 100px;
    	color: #fff;
    	width: 300px;
@@ -103,3 +112,62 @@
             background-color: nth($ct-series-colors, $i + 1);
         }
     }*/
+
+.scoretable{
+	width: 95%;
+	margin: 0 auto;
+	position: relative;
+	top: 10px;
+	color: #fff;
+	font-family: GalaxiePolarisCondensed-Book;
+	font-size: 35px;
+	text-transform: uppercase;
+}
+
+.scoretable th{
+	border-bottom: thin solid white;
+	margin: 0; padding: 0;
+	text-align: left;
+	font-family: GalaxiePolarisCondensed-Bold;
+}
+
+.scoretable td{
+	height: 72px;
+	border-bottom: 1px dotted #666;
+}
+/*	.scoretable td.percentage{
+		text-align: center;
+	}*/
+
+.section-container{
+	margin: 0 auto;
+	background: url('../images/000000-0.7.png') top left repeat;
+	width: 90%;
+	margin: 20px auto; 
+	height: 200px;
+}
+.half-section{
+	float: left;
+	width: 49%;
+	height: 200px;
+
+}
+
+h2{
+	color: #fff;
+	font-family: GalaxiePolarisCondensed-Bold;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 40px;
+	line-height: 20px;
+
+}	
+	.week-total-value, .week-total-comp-value{
+		display: block;
+		color: #fff;
+		font-family: GalaxiePolarisCondensed-Bold;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 90px;
+		line-height: 70px;
+	}
