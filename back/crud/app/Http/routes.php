@@ -12,5 +12,19 @@
 */
 
 $app->get('/', function () use ($app) {
-    return $app->welcome();
+    return view('home');
 });
+
+//Routes to edit sales 
+$app->get('/sales/edit/{banner}', 'SalesController@editSales');
+$app->post('/sales/save', 'SalesController@saveSales');
+
+//route to get sales :: only to be accessed by frontend
+$app->get('/sales/{banner}', 'SalesController@getSales');
+
+//Route to edit pie charts
+$app->get('/pie/edit/{banner}', 'PieController@editPie');
+$app->post('/pie/save', 'PieController@savePie');
+
+//route to get sales :: only to be accessed by frontend
+$app->get('/pie/{banner}', 'PieController@getPie');
