@@ -46,7 +46,8 @@ new Chartist.Bar('#chart1', {
   chartPadding: {
     top: 30,
     right: 25,
-    left: -20
+    left: -20,
+    bottom: -20
   },      
   seriesBarDistance: 40,
   axisX: {
@@ -63,7 +64,7 @@ new Chartist.Bar('#chart1', {
 }).on('draw', function(data) {
   if(data.type === 'bar') {
     data.element.attr({
-      style: 'stroke-width: 30px'
+      style: 'stroke-width: 35px'
     }); 
   }
 });
@@ -85,7 +86,7 @@ var responsiveOptions = [
     chartPadding: {
         top: 30,
         right: 0,
-        left: 200,
+        left: 300,
         bottom: 30
     }, 
     // labelOffset: 0,
@@ -99,7 +100,7 @@ var responsiveOptions = [
         chartPadding: {
         top: 30,
         right: 0,
-        left: 350,
+        left: 500,
         bottom: 30
         }
     }]
@@ -147,9 +148,14 @@ var legend = $('.ct-legend');
 $.each(datapie.labels, function(i, val) {
     var listItem = $('<li />')
         .addClass('ct-series-' + i)
-        .html('<strong>' + val + '</strong>: $' + datapie.series[i])
+        .html('<strong>' + val + '</strong>: $' + numberWithCommas(datapie.series[i]))
         .appendTo(legend);
 });
+
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 // new Chartist.Bar('#bar', databar, optionsbar).on('draw', function(data) {
 
