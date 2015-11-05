@@ -12,5 +12,12 @@
 */
 
 $app->get('/', function () use ($app) {
-    return $app->welcome();
+    return view('home');
 });
+
+//Routes to edit sales 
+$app->get('/sales/edit/{banner}', 'SalesController@editSales');
+$app->post('/sales/save', 'SalesController@saveSales');
+
+//route to get sales :: only to be accessed by frontend
+$app->get('/sales/{banner}', 'SalesController@getSales');
