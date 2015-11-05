@@ -14,8 +14,9 @@
 <body>
 	
 	<div class="row">
-		<div class="col-md-9 col-md-offset-1">
-			<h2 class="title">Pie Chart &mdash; {{$pie->banner}}</h2>
+		<div class="col-md-4 col-md-offset-1 title"><h2> Pie Chart &mdash; {{$pie->banner}} </h2></div>
+		<div class="col-md-2">
+			<h2 id="week">{{$pie->week}}</h2>
 		</div>
 		<div class="col-md-offset-9">
 			<br>
@@ -88,6 +89,7 @@
 		console.log("add more");
 		$("#data-table tbody").append("<tr><td>Edit this..</td><td>Edit this..</td></tr>");
 		initiateTableEdit();
+		$('input[name="category[]"]:last').click();
 
 	});
 
@@ -98,11 +100,28 @@
 		saveChanges();
 
 	});
+
+	$("#week").on("click", function(){
+
+		var week = "<?php echo $pie->week; ?>"
+	    $(this).html('');
+	    $('<input></input>')
+	        .attr({
+	            'type': 'text',
+	            'name': 'week',
+	            'id': 'week',
+	            'value': week
+	        })
+	        .appendTo('#week');
+	    $('#week').focus();
+	});
+
  	var buildJSON = function() {
 
  		var json = {};
 
  		json["banner"] = "<?php echo $pie->banner; ?>"
+ 		json["week"]   = $('input[name="week"]').val();
 
  		json["details"] = {};
 
@@ -151,6 +170,7 @@
  			saveChanges();
 		 		
  	})
+ 	
  	$("document").ready(function () {
  		initiateTableEdit();
 
