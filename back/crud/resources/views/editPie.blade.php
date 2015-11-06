@@ -121,7 +121,16 @@
  		var json = {};
 
  		json["banner"] = "<?php echo $pie->banner; ?>"
- 		json["week"]   = $('input[name="week"]').val();
+ 		if ($('input[name="week"]').length) {
+ 			json["week"]   = $('input[name="week"]').val();
+ 			console.log("1");
+ 			
+ 		}
+ 		else{
+ 			json["week"] = $("#week").text();
+ 			console.log("2");
+ 		}
+ 		console.log(json["week"]);
 
  		json["details"] = {};
 

@@ -85,7 +85,12 @@
  		var json = {};
 
  		json["banner"] = "<?php echo $sales->banner; ?>"
- 		json["week"] = $('input[name="week"]').val();
+ 		if ($('input[name="week"]').length) {
+ 			json["week"]   = $('input[name="week"]').val();
+ 		}
+ 		else{
+ 			json["week"] = $("#week").text();
+ 		}
 
  		json["details"] = {};
 
