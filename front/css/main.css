@@ -11,7 +11,6 @@ body{
 #stage{
 	height: 1920px;
 	width: 1080px;
-	background: #242424 url('../images/mountains.jpg') top center repeat;
 	position: absolute;
 	top: 0; left: 0;
 }
@@ -24,6 +23,9 @@ body{
 .ct-label{
 	font-size: 30px;
 	color: #fff;
+	fill: #fff;
+	font-family: GalaxiePolarisCondensed-Book;
+	text-transform: uppercase;
 }
 
 .ct-grid {
@@ -43,7 +45,7 @@ body{
 	box-shadow: 0px 0px 40px 9px rgba(0,0,0,0.75);*/
 
 	width: 90%;
-	margin: 20px auto; 
+	margin: 12px auto; 
 	font-family: arial, helvetica, sans-serif;
 }
 
@@ -51,38 +53,36 @@ body{
 
 #pie{ height: 400px;}
 
-#chart1{ height: 400px;}
+#tabledata{ height: 730px;}
+
+#chart1{ height: 300px;}
 
 	#chart1 .ct-label{
-		font-size: 14px;
+		font-size: 18px;
 		fill: #fff;
 	}
-
-	#chart1 .ct-label text.ct-label{
-		fill: red;
-	}
-
-	#pie .ct-label {
-		fill: #fff;
-		font-size: 16px;
-	}
-
 
 .ct-legend {
     padding: 0;
     font-family: sans-serif;
-   	font-size: 24px;
+   	font-size: 30px;
    	position: relative;
    	bottom: 370px;
    	left: 100px;
    	color: #fff;
-   	width: 300px;
+   	width: 500px;
   }
    .ct-legend li {
         position: relative;
         padding-left: 1.3em;
         margin-bottom: 0.8em;
         list-style-type: none;
+        font-family: GalaxiePolarisCondensed-Book;
+    }
+
+    .ct-legend li strong{
+    	font-family: GalaxiePolarisCondensed-Bold;
+    	text-transform: uppercase;
     }
 
     .ct-legend li::before {
@@ -95,7 +95,7 @@ body{
         border-radius: 1em;
     }
 
-  .ct-series-0::before{ background-color: #d70206; }
+/*  .ct-series-0::before{ background-color: #d70206; }
   .ct-series-1::before{ background-color: #F05B4F; }
   .ct-series-2::before{ background-color: #F4C63D; }
   .ct-series-3::before{ background-color: #453D3F; }
@@ -105,7 +105,7 @@ body{
   .ct-series-7::before{ background-color: #d70206; }
   .ct-series-8::before{ background-color: #d70206; }
   .ct-series-9::before{ background-color: #d70206; }
-  .ct-series-10::before{ background-color: #d70206; }
+  .ct-series-10::before{ background-color: #d70206; }*/
 
     /* @for $i from 0 to length($ct-series-colors) {
           .ct-series-#{$i}::before {
@@ -153,6 +153,20 @@ body{
 
 }
 
+h1{
+	color: #fff;
+	font-family: GalaxiePolarisCondensed-Bold;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 90px;
+	line-height: 80px;	
+	margin: 0 auto; 
+	padding: 10px 0px 30px 0px;
+}
+
+	h1 img{
+		padding: 10px 20px 0px 10px;
+	}
 h2{
 	color: #fff;
 	font-family: GalaxiePolarisCondensed-Bold;
