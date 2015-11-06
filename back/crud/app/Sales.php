@@ -15,7 +15,7 @@ class Sales extends Model
 
     public static function saveSales( $banner , $file) {
         
-        // die(var_dump($file));
+        $banner = strtolower($banner);
     	file_put_contents("/Applications/XAMPP/xamppfiles/htdocs/salesscoreboard/back/crud/public/files/".$banner.".json", json_encode($file)); 
         return;   	
     }

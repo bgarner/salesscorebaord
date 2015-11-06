@@ -15,6 +15,7 @@ class Pie extends Model
 
     public static function savePie( $banner , $file) {
         
+    	$banner = strtolower($banner);
     	file_put_contents("/Applications/XAMPP/xamppfiles/htdocs/salesscoreboard/back/crud/public/files/pie/".$banner.".json", json_encode($file));
         return;   	
     }
