@@ -6,7 +6,7 @@ var chartdata;
 var piedata;
 var plusminusdata;
 
-$.getJSON('/var/www/html/salesscoreboard/back/crud/public/files/'+BANNER+'.json', function(data) {
+$.getJSON('http://salesscoreboardadmin.storeapps.fglsports.dmz/files/'+BANNER+'.json', function(data) {
   console.log(data);
 
   var week =  data.week;
@@ -111,7 +111,7 @@ $.getJSON('/var/www/html/salesscoreboard/back/crud/public/files/'+BANNER+'.json'
 
 var pieDollarsArray = [];
 var pieLabelsArray = [];
-$.getJSON('/var/www/html/salesscoreboard/back/crud/public/files/pie/'+BANNER+'.json', function(data) {
+$.getJSON('http://salesscoreboardadmin.storeapps.fglsports.dmz/files/pie/'+BANNER+'.json', function(data) {
   
     $.each(data.details, function( index, d ){
         
