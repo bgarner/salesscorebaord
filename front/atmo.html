@@ -25,59 +25,58 @@
                 <h1><img src="/images/atmo-logo.png" /> Scoreboard</h1>
                 <table class="scoretable">
                     <tr>
-                        <th>Week 40</th>
+                        <th id="week"></th>
                         <th>Actual</th>
                         <th>Last Year</th>
                         <th>Last Year %</th>
                     </tr>
 
-                    <tr>
-                        <td>Monday</td>
-                        <td>$2,409,573</td>
-                        <td>$2,652,988</td>
-                        <td class='percentage'>95.3%</td>
+                    <tr id="Monday">
+                        <td class="day"></td>
+                        <td class="thisyear"></td>
+                        <td class="lastyear"></td>
+                        <td class="percentage"></td>
                     </tr>
 
-                    <tr>
-                        <td>Tuesday</td>
-                        <td>$2,233,389</td>
-                        <td>$2,357,740</td>
-                        <td class='percentage'>99.6%</td>
+                    <tr id="Tuesday">
+                        <td class="day"></td>
+                        <td class="thisyear"></td>
+                        <td class="lastyear"></td>
+                        <td class="percentage"></td>
                     </tr>
 
-                    <tr>
-                        <td>Wednesday</td>
-                        <td>$2,279,086</td>
-                        <td>$2,567,888</td>
-                        <td class='percentage'>94.4%</td>
+                    <tr id="Wednesday">
+                        <td class="day"></td>
+                        <td class="thisyear"></td>
+                        <td class="lastyear"></td>
+                        <td class="percentage"></td>
                     </tr>
 
-                    <tr>
-                        <td>Thursday</td>
-                        <td></td>
-                        <td></td>
-                        <td class='percentage'></td>
+                    <tr id="Thursday">
+                        <td class="day"></td>
+                        <td class="thisyear"></td>
+                        <td class="lastyear"></td>
+                        <td class="percentage"></td>
                     </tr>                                                            
 
-                    <tr>
-                        <td>Friday</td>
-                        <td></td>
-                        <td></td>
-                        <td class='percentage'></td>
+                    <tr id="Friday">
+                        <td class="day"></td>
+                        <td class="thisyear"></td>
+                        <td class="lastyear"></td>
+                        <td class="percentage"></td>
                     </tr>
 
-                    <tr>
-                        <td>Saturday</td>
-                        <td></td>
-                        <td></td>
-                        <td class='percentage'></td>
-                    </tr>
+                    <tr id="Saturday">
+                        <td class="day"></td>
+                        <td class="thisyear"></td>
+                        <td class="lastyear"></td>
+                        <td class="percentage"></td>
 
-                    <tr>
-                        <td>Sunday</td>
-                        <td></td>
-                        <td></td>
-                        <td class='percentage'></td>
+                    <tr id="Sunday">
+                        <td class="day"></td>
+                        <td class="thisyear"></td>
+                        <td class="lastyear"></td>
+                        <td class="percentage"></td>
                     </tr>                                                          
                 </table>
 
@@ -100,13 +99,16 @@
             <ul class="ct-legend"></ul>
 
         </div>
-
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="bower_components/chartist/dist/chartist.min.js"></script>
         <script src="bower_components/chartist-plugin-pointlabels/dist/chartist-plugin-pointlabels.min.js"></script>
-        <script src="/js/main.js"></script>
-     
+
+        <script type="text/javascript">
+        const BANNER = "atmosphere";
+        </script>
+        <script src="/js/chartoptions.js"></script>
+        <script src="/js/dataprocess.js"></script>
     </body>
 
 </html>
