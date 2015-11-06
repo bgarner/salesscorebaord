@@ -16,15 +16,15 @@ $app->get('/', function () use ($app) {
 });
 
 //Routes to edit sales 
-$app->get('/sales/edit/{banner}', 'SalesController@editSales');
-$app->post('/sales/save', 'SalesController@saveSales');
+$app->get('/sales/edit/{banner}', 'App\Http\Controllers\SalesController@editSales');
+$app->post('/sales/save', 'App\Http\Controllers\SalesController@saveSales');
 
 //route to get sales :: only to be accessed by frontend
-$app->get('/sales/{banner}', 'SalesController@getSales');
+$app->get('/sales/{banner}', 'App\Http\Controllers\SalesController@getSales');
 
 //Route to edit pie charts
-$app->get('/pie/edit/{banner}', 'PieController@editPie');
-$app->post('/pie/save', 'PieController@savePie');
+$app->get('/pie/edit/{banner}', 'App\Http\Controllers\PieController@editPie');
+$app->post('/pie/save', 'App\Http\Controllers\PieController@savePie');
 
 //route to get sales :: only to be accessed by frontend
-$app->get('/pie/{banner}', 'PieController@getPie');
+$app->get('/pie/{banner}', 'App\Http\Controllers\PieController@getPie');
