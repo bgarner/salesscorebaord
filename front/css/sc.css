@@ -1,6 +1,6 @@
-#stage{
+/*#stage{
 	background: #242424 url('../images/jose.jpg') top center repeat;
-}
+}*/
 
 .ct-series-a .ct-bar,.ct-series-a .ct-line,.ct-series-a .ct-point,.ct-series-a .ct-slice-donut{stroke:#d70206}
 .ct-series-a .ct-area,.ct-series-a .ct-slice-pie{fill:#d70206}
