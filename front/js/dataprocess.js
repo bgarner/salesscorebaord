@@ -51,9 +51,12 @@ var processSales = function()
           //add dollars to 
          
 
-          var plusminus = percentage - 100;
-          plusminusdatavalues.push( parseFloat(plusminus) );
+          // var plusminus = percentage - 100;
+          // plusminusdatavalues.push( parseFloat(plusminus) );
 		}
+		
+		var plusminus = percentage - 100;
+          plusminusdatavalues.push( parseFloat(plusminus) );
 		
 		 actualDollars.push( parseInt(d.data.thisyear) );
           lastYearDollars.push( parseInt(d.data.lastyear) );
