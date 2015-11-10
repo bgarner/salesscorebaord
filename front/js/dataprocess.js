@@ -27,8 +27,10 @@ var processSales = function()
 
       $.each(data.details, function( index, d ){
           
+		$( "#"+d.day+" .day" ).text( d.day );
+		if(d.data.thisyear > 0) {
           //data table
-          $( "#"+d.day+" .day" ).text( d.day );
+
           $( "#"+d.day+" .thisyear" ).text( "$" + numberWithCommas(d.data.thisyear) );
           $( "#"+d.day+" .lastyear" ).text( "$" + numberWithCommas(d.data.lastyear) );
 
@@ -36,17 +38,25 @@ var processSales = function()
           var percentage = (diff / d.data.lastyear) * 100;
           percentage = 100 + parseFloat(percentage);
           percentage = Math.round(percentage * 100) / 100;
-          $( "#"+d.day+" .percentage" ).text( percentage +"%" );
-
+			
+		    if( isNaN(percentage) == true ){
+				$( "#"+d.day+" .percentage" ).text( "" );				
+			} else {
+				$( "#"+d.day+" .percentage" ).text( percentage + "%" );
+			}
+          
           weektotaldollars = weektotaldollars + parseInt(d.data.thisyear);
           lastyeartotaldollars = lastyeartotaldollars + parseInt(d.data.lastyear);
           
           //add dollars to 
-          actualDollars.push( parseInt(d.data.thisyear) );
-          lastYearDollars.push( parseInt(d.data.lastyear) );
+         
 
           var plusminus = percentage - 100;
           plusminusdatavalues.push( parseFloat(plusminus) );
+		}
+		
+		 actualDollars.push( parseInt(d.data.thisyear) );
+          lastYearDollars.push( parseInt(d.data.lastyear) );
 
       });
 
