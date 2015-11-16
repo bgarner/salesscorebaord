@@ -170,7 +170,7 @@ $(document).ready(function(){
     console.log("go!");
     processSales(); 
     processPie();
-  },5000);
+  },60000);
 
 }); 
 
