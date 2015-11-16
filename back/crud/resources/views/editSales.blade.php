@@ -43,9 +43,25 @@
 						<td>{{ $detail->day }}</td>
 						<td>{{ $detail->data->thisyear }}</td>
 						<td>{{ $detail->data->lastyear }}</td>
-						<td>{{ $detail->data->percentage }}</td>
+						<td class="percentage"> {{$detail->data->percentage}} </td>
 						</tr>
 					@endforeach
+				</tbody>
+			</table>
+			<table id="totals-table" class="table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Week Total</th>
+						<th>Total Percentage</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td id="weekTotal">{{$sales->weekTotal}}</td>
+						<td id="totalPercentage">{{$sales->totalPercentage}}</td>
+					</tr>
 				</tbody>
 			</table>
 			
@@ -74,9 +90,20 @@
 			columns: {	
 						
 						identifier: [0, 'day[]'],                   
-	 					editable: [[1, 'current_year[]'], [2, 'last_year[]'], [3, 'percentage[]']]
+	 					editable: [[1, 'current_year[]'], [2, 'last_year[]']]
 	 				}
 	 	});
+
+	 	$("#totals-table").Tabledit({
+	 		editButton: false,
+	        deleteButton: false,	
+	        restoreButton:false,
+	        saveButton:false,
+			columns: {	                   
+						identifier: [0, 'index'],
+	 					editable: [[1, 'weekTotal'], [2, 'totalPercentage']]
+	 				}
+	 	})
 	}
 
 	
@@ -91,16 +118,21 @@
  		else{
  			json["week"] = $("#week").text();
  		}
+ 		json["weekTotal"] = $("input[name='weekTotal']").val();
+ 		json["totalPercentage"] = $("input[name='totalPercentage']").val();
 
  		json["details"] = {};
 
- 		$("tbody tr").each(function(i) {
+ 		$("#data-table tbody tr").each(function(i) {
 
 
  			var day_val = $(this).find('input[name^="day"]').val();
  			var current_year_val = $(this).find('input[name^="current_year"]').val();
  			var last_year_val = $(this).find('input[name^="last_year"]').val();
- 			var percentage_val = $(this).find('input[name^="percentage"]').val();
+ 			
+ 			var diff = parseInt(current_year_val - last_year_val);
+ 			var percentage = 100 + (diff/last_year_val)*100;
+ 			var percentage_val = Math.round(percentage*100)/100;
  			
  			var dataByDay = {};
  			dataByDay["day"] =  day_val;
@@ -116,7 +148,7 @@
  			
 	 		
  		});
- 		
+ 		console.log(JSON.stringify(json));
  		return JSON.stringify(json);
  	}
 
