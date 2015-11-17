@@ -55,7 +55,7 @@ var processSales = function()
           // plusminusdatavalues.push( parseFloat(plusminus) );
 		}
 		
-		var plusminus = percentage - 100;
+		 var plusminus = percentage - 100;
           plusminusdatavalues.push( parseFloat(plusminus) );
 		
 		 actualDollars.push( parseInt(d.data.thisyear) );
@@ -64,14 +64,15 @@ var processSales = function()
       });
 
       //week totals
-      $( ".week-total-value" ).text( "$" + numberWithCommas(weektotaldollars) )
+      $( ".week-total-value" ).text( "$" + numberWithCommas(data.weekTotal) )
 
       //total %
       var diff = weektotaldollars - lastyeartotaldollars;
-      var totalcompperc = (diff / lastyeartotaldollars) * 100;
-      weekpercentage = 100 + parseFloat(totalcompperc);
-      weekpercentage = Math.round(weekpercentage * 100) / 100;
-      $( ".week-total-comp-value" ).text( weekpercentage + "%" );    
+      // var totalcompperc = (diff / lastyeartotaldollars) * 100;
+      var totalcompperc = data.totalPercentage;
+      // weekpercentage = 100 + parseFloat(totalcompperc);
+      // weekpercentage = Math.round(weekpercentage * 100) / 100;
+      $( ".week-total-comp-value" ).text( totalcompperc + "%" );    
 
 
 

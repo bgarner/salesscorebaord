@@ -1,4 +1,5 @@
 /storage/logs
 /storage/framework/cache
+/public/files
 .env
 .env.example
