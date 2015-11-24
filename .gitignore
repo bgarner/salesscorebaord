@@ -1,0 +1,5 @@
+back/crud/public/files/*
+back/crud/public/files/
+
+.DS_Store
+Thumbs.db
