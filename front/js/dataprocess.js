@@ -8,7 +8,8 @@ var plusminusdata;
 
 var processSales = function() 
 {
-
+    $.ajaxSetup({ cache: false });    
+    
   $.getJSON('http://salesscoreboardadmin.storeapps.fglsports.dmz/files/'+BANNER+'.json', function(data) {
     console.log(data);
 
@@ -31,19 +32,30 @@ var processSales = function()
 		if(d.data.thisyear > 0) {
           //data table
 
-          $( "#"+d.day+" .thisyear" ).text( "$" + numberWithCommas(d.data.thisyear) );
-          $( "#"+d.day+" .lastyear" ).text( "$" + numberWithCommas(d.data.lastyear) );
+        $( "#"+d.day+" .thisyear" ).text( "" );
+        $( "#"+d.day+" .lastyear" ).text( "" );
 
-          var diff = parseInt(d.data.thisyear) - parseInt(d.data.lastyear);
-          var percentage = (diff / d.data.lastyear) * 100;
-          percentage = 100 + parseFloat(percentage);
-          percentage = Math.round(percentage * 100) / 100;
+        console.log("emptied " + d.day + "!");
+
+        $( "#"+d.day+" .thisyear" ).text( "$" + numberWithCommas(d.data.thisyear) );
+        $( "#"+d.day+" .lastyear" ).text( "$" + numberWithCommas(d.data.lastyear) );
+
+
+        console.log("filled " + d.day + " with " + d.data.thisyear + " and " + d.data.lastyear);
+
+        var diff = parseInt(d.data.thisyear) - parseInt(d.data.lastyear);
+        var percentage = (diff / d.data.lastyear) * 100;
+        percentage = 100 + parseFloat(percentage);
+        percentage = Math.round(percentage * 100) / 100;
 			
-		    if( isNaN(percentage) == true ){
-				$( "#"+d.day+" .percentage" ).text( "" );				
-			} else {
-				$( "#"+d.day+" .percentage" ).text( percentage + "%" );
-			}
+        if( isNaN(percentage) == true ){
+        	$( "#"+d.day+" .percentage" ).text( "" );              
+        } else {
+            $( "#"+d.day+" .percentage" ).text( "" );              
+            console.log("explicitly emptied " + d.day + " percentage" ); 
+        	$( "#"+d.day+" .percentage" ).text( percentage + "%" );
+            console.log("filled "+ d.day + "% with " + percentage);
+        }
           
           weektotaldollars = weektotaldollars + parseInt(d.data.thisyear);
           lastyeartotaldollars = lastyeartotaldollars + parseInt(d.data.lastyear);
