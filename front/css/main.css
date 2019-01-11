@@ -95,6 +95,12 @@ body{
         border-radius: 1em;
     }
 
+
+    /* fix the other category for Rolf */
+    .ct-series-3 strong{
+    	padding-left: 18px;
+    }
+
 /*  .ct-series-0::before{ background-color: #d70206; }
   .ct-series-1::before{ background-color: #F05B4F; }
   .ct-series-2::before{ background-color: #F4C63D; }
